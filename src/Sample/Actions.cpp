@@ -132,6 +132,8 @@ M5_LOGI("%d", button);
 }
 
 bool Actions::onAvailableStream(Stream& stream, Resources& resources) {
+  const auto line = stream.readStringUntil('\n');
+  sendMessage("chat", line.c_str(), resources);
   return true;
 }
 
