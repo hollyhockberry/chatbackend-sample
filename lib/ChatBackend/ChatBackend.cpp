@@ -110,6 +110,7 @@ void ChatBackend::handleMessage(const String& type, const String& content) {
   M5_LOGV("%s, %s", type.c_str(), content.c_str());
   if (type.equals("say")) {
     takeMutex();
+    M5.Mic.end();
     M5.Speaker.begin();
     if (!TTS().say(content.c_str())) {
 M5_LOGE(); //TODO(hollyhockberry):
