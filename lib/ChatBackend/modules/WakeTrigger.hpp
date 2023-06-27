@@ -14,9 +14,6 @@ class WakeTrigger {
 
   virtual bool record() { return false; }
   virtual bool listen() { return false; }
-
- protected:
-  void detected();
 };
 
 }  // chat_backend::modules
