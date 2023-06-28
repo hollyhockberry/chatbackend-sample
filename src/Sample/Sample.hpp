@@ -7,11 +7,11 @@
 
 #include <ChatBackend.hpp>
 #include <tasks/Chat.hpp>
-#include <implements/SimpleVoxWakeTrigger.hpp>
 #include <implements/WhisperSTT.hpp>
 #include <implements/VoiceVoxTTS.hpp>
 #include "Actions.hpp"
 #include "Avatar.hpp"
+#include "WakeTrigger.hpp"
 #include "AudioOutputM5Speaker.h"
 
 namespace sample {
@@ -22,7 +22,7 @@ class Sample : public chat_backend::ChatBackend {
   chat_backend::tasks::Chat _chat;
   chat_backend::impl::WhisperSTT _stt;
   chat_backend::impl::VoiceVoxTTS _tts;
-  chat_backend::impl::SimpleVoxWakeTrigger _wake;
+  WakeTrigger _wake;
   Avatar _avatar;
 
  public:
