@@ -78,6 +78,9 @@ void Chat::add(const char* chunk) {
     sendMessage("endThink");
   }
   _temporary += chunk;
+  if (_threshold <= 0) {
+    return;
+  }
   String str(chunk);
   for (const auto& delimiter : _delimiters) {
     if (str.indexOf(delimiter) < 0) {
