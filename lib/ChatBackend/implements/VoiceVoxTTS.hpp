@@ -16,6 +16,7 @@ class VoiceVoxTTS : public modules::TTS {
   VoiceVoxTTS(AudioOutput& audioOutput, const char* rootCACertificate);
   bool busy() const override;
   void apiKey(const char* key) override;
+  void speaker(int id);
   void begin() override;
   bool say(const char* content) override;
 };

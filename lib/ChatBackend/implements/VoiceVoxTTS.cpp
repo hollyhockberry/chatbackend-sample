@@ -24,6 +24,10 @@ void VoiceVoxTTS::begin() {
   _client->begin();
 }
 
+void VoiceVoxTTS::speaker(int id) {
+  _client->speaker(id);
+}
+
 bool VoiceVoxTTS::say(const char* content) {
   M5_LOGV("begin");
   _client->queue(content);
